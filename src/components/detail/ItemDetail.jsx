@@ -5,7 +5,7 @@ const ItemDetail = ({item}) => {
     <div>
       <div className="card w-96 bg-base-100 shadow-xl border">
           <figure className="px-10 pt-10">
-              <img src={item.pictureURL} alt="Shoes" className="rounded-xl max-h-96" />
+              <img src={`../${item.pictureURL}`} alt="Shoes" className="rounded-xl max-h-96" />
           </figure>
           <div className="card-body items-center text-center">
               <h2 className="card-title">{item.title}</h2>
