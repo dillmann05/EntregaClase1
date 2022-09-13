@@ -26,7 +26,9 @@ const ItemDetailContainer = () => {
     },[id]);
 
   return (
-    <ItemDetail item={manga}/>
+   <div className="h-[90vh] flex items-center justify-center">
+       <ItemDetail item={manga}/>
+   </div>   
   )
 }
 export default ItemDetailContainer

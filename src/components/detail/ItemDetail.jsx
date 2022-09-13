@@ -2,7 +2,7 @@ import ItemCount from "../ItemCount"
 
 const ItemDetail = ({item}) => {
   return (
-    <div>
+    <div className="flex gap-20">
       <div className="card w-96 bg-base-100 shadow-xl border">
           <figure className="px-10 pt-10">
               <img src={`../${item.pictureURL}`} alt="Shoes" className="rounded-xl max-h-96" />
@@ -15,9 +15,9 @@ const ItemDetail = ({item}) => {
               </div>
           </div>
       </div>
-      <div className="card w-96 bg-base-100 shadow-xl border">
-        <h3>Descripción:</h3>
-        <p>{item.description}</p>
+      <div className="card w-96 bg-base-100 shadow-xl border p-10 gap-5">
+        <h3 className="text-5xl underline">Descripción:</h3>
+        <p className=" text-xl text-center tracking-widest">{item.description}</p>
       </div>
     </div>
   )
