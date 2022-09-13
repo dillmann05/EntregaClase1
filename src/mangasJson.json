@@ -1,0 +1,86 @@
+[
+    {
+        "id": "0",
+        "title": "Tokyo Revengers" ,
+        "fav": "true",
+        "episode": 3,
+        "description": "Ken Wakui TOKYO REVENGERS 03 Ivrea Argentina Páginas: 200 Formato: 180 x 130 x 10 Precio: $ 750.00 Peso: 0.25 kgs." ,
+        "price": 750 ,
+        "pictureURL": "./media/tokyorevengers.jpg",
+        "stock": 5
+    },
+    {
+        "id": "1",
+        "title": "Tokyo Revengers" ,
+        "episode": 2,
+        "description": "Ken Wakui TOKYO REVENGERS 02 Ivrea Argentina Páginas: 200 Formato: 180 x 130 x 10 Precio: $ 750.00 Peso: 0.25 kgs." ,
+        "price": 750 ,
+        "pictureURL": "./media/tokyorevengers02.jpg",
+        "stock": 5
+    },
+    {
+        "id": "2",
+        "title": "Tokyo Revengers" ,
+        "episode": 1,
+        "description": "Ken Wakui TOKYO REVENGERS 03 Ivrea Argentina Páginas: 200 Formato: 180 x 130 x 10 Precio: $ 750.00 Peso: 0.25 kgs." ,
+        "price": 750 ,
+        "pictureURL": "./media/tokyorevengers01.jpg",
+        "stock": 5
+    },
+    {
+        "id": "3",
+        "title": "ChainSaw" ,
+        "fav": "true",
+        "episode": 4,
+        "description": "Tatsuki Fujimoto CHAINSAW MAN 04 Ivrea Argentina Páginas: 200 Formato: 10x130x180 Precio: $ 750.00 Peso: 0.2 kgs." ,
+        "price": 750 ,
+        "pictureURL": "./media/chainsaw.jpg",
+        "stock": 5
+    },
+    {
+        "id": "4",
+        "title": "ChainSaw" ,
+        "episode": 1,
+        "description": "Tatsuki Fujimoto CHAINSAW MAN 01 Ivrea Argentina Páginas: 200 Formato: 10x130x180 Precio: $ 750.00 Peso: 0.2 kgs." ,
+        "price": 750 ,
+        "pictureURL": "./media/chainsaw01.jpg",
+        "stock": 5
+    },
+    {
+        "id": "5",
+        "title": "ChainSaw" ,
+        "episode": 2,
+        "description": "Tatsuki Fujimoto CHAINSAW MAN 02 Ivrea Argentina Páginas: 200 Formato: 10x130x180 Precio: $ 750.00 Peso: 0.2 kgs." ,
+        "price": 750 ,
+        "pictureURL": "./media/chainsaw02.jpg",
+        "stock": 5
+    },
+    {
+        "id": "6",
+        "title": "Jujutsu Kaisen" ,
+        "fav": "true",
+        "episode": 0,
+        "description": "Gege Akutami JUJUTSU KAISEN 00 Panini Arg/Mex Páginas: 200 Formato: 10 x 130 x 180 Precio: $ 1100.00 Peso: 0.2 kgs." ,
+        "price": 1100 ,
+        "pictureURL": "./media/jujutsukaisen.jpg",
+        "stock": 5
+    },
+    {
+        "id": "7",
+        "title": "Jujutsu Kaisen" ,
+        "episode": 1,
+        "description": "Gege Akutami JUJUTSU KAISEN 01 Panini Arg/Mex Páginas: 200 Formato: 10 x 130 x 180 Precio: $ 1100.00 Peso: 0.2 kgs." ,
+        "price": 1100 ,
+        "pictureURL": "./media/jujutsukaisen01.jpg",
+        "stock": 5
+    },
+    {
+        "id": "8",
+        "title": "Jujutsu Kaisen" ,
+        "episode": 2,
+        "description": "Gege Akutami JUJUTSU KAISEN 02 Panini Arg/Mex Páginas: 200 Formato: 10 x 130 x 180 Precio: $ 1100.00 Peso: 0.2 kgs." ,
+        "price": 1100 ,
+        "pictureURL": "./media/jujutsukaisen02.jpg",
+        "stock": 5
+    }
+]
