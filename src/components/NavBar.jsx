@@ -30,7 +30,7 @@ const NavBar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
-            <li><button><Link to={"/category/Jujutsu Kaisen"}>Jujutsu Kaisen</Link></button></li>
+            <li><button><Link to={"/"}>Inicio</Link></button></li>
             <li tabindex="0">
               <Link to={"/products"}>
                 Productos
