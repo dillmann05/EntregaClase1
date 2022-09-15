@@ -13,17 +13,17 @@ const NavBar = () => {
             <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
               <li><Link to={"/"}/>Inicio</li>
               <li tabindex="0">
-                <a href="/#" className="justify-between">
+                <Link to={"/"}className="justify-between">
                   Productos
                   <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/></svg>
-                </a>
+                </Link>
                 <ul className="p-2">
-                  <li><a href="/#">Tokyo Revengers</a></li>
-                  <li><a href="/#">ChainSaw</a></li>
-                  <li><a href="/#">Jujutsu Kaisen</a></li>
+                  <li><Link to={"/category/Tokyo Revengers"}>Tokyo Revengers</Link></li>
+                  <li><Link to={"/category/ChainSaw"}>ChainSaw</Link></li>
+                  <li><Link to={"/category/Jujutsu Kaisen"}>Jujutsu Kaisen</Link></li>
                 </ul>
               </li>
-              <li><a href="/#">Ofertas</a></li>
+              <li><Link to={"/"}/>Ofertas</li>
             </ul>
           </div>
           <CartWidget/>
@@ -32,7 +32,7 @@ const NavBar = () => {
           <ul className="menu menu-horizontal p-0">
             <li><button><Link to={"/"}>Inicio</Link></button></li>
             <li tabindex="0">
-              <Link to={"/products"}>
+              <Link to={"/"}>
                 Productos
                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
               </Link>
@@ -42,11 +42,11 @@ const NavBar = () => {
                   <li><Link to={"/category/Jujutsu Kaisen"}>Jujutsu Kaisen</Link></li>
               </ul>
             </li>
-            <li><a href="/#">Ofertas</a></li>
+            <li><Link to={"/"}>Ofertas</Link></li>
           </ul>
         </div>
         <div className="navbar-end">
-          <a href="/#" className="btn">Registrate</a>
+          <Link to={"/"}className="btn">Registrate</Link>
         </div>
       </nav>
     </header>
