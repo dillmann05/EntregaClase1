@@ -1,6 +1,18 @@
+import { useState } from "react"
+import { useCartContext } from "../../context/CartContext"
 import ItemCount from "../ItemCount"
 
 const ItemDetail = ({item}) => {
+
+  const [quantity, setQuantity] = useState(0);
+  
+  const { addManga } = useCartContext();
+
+  const myOnAdd = (quantityToAdd) =>{
+    setQuantity(quantityToAdd);
+    addManga(item, quantityToAdd);
+  };
+  
   return (
     <div className="flex gap-20">
       <div className="card w-96 bg-base-100 shadow-xl border">
@@ -11,7 +23,13 @@ const ItemDetail = ({item}) => {
               <h2 className="card-title">{item.title}</h2>
               <p>ARS $ {item.price}</p>
               <div className="card-actions flex flex-col gap-4">
-                <ItemCount stock={item.stock} initial={1} item={item}/>
+                {
+                quantity === 0 
+                ?
+                <ItemCount stock={item.stock} initial={1} item={item} myOnAdd={myOnAdd}/>
+                :
+                <div> Item agregado.</div>
+              }
               </div>
           </div>
       </div>

@@ -4,7 +4,7 @@ import { IoAddOutline } from "react-icons/io5"
 import { Link } from "react-router-dom";
 import { useCartContext } from "../context/CartContext";
 
-const ItemCount = ({stock, initial, item}) => {
+const ItemCount = ({stock, initial, item, myOnAdd}) => {
   const [count, setCount] = useState(initial);
 
   const onSubtract = () => {
@@ -19,9 +19,13 @@ const ItemCount = ({stock, initial, item}) => {
     }
   };
 
-  const { addManga } = useCartContext();
+  const { removeManga, clear } = useCartContext();
 
-  const addHandler = ()=>{addManga(item, count)};
+  const addHandler = ()=>{myOnAdd(count)};
+
+  const removeHandler = ()=>{removeManga(item)};
+
+  const clearHandler = ()=>{clear()};
 
   return (
     <Fragment>
@@ -35,6 +39,8 @@ const ItemCount = ({stock, initial, item}) => {
           </button>
         </div>
         <Link to={'/cart'} className="btn btn-primary w-full" onClick={addHandler}>Buy Now</Link>
+        <Link to={'/cart'} className="btn btn-primary w-full" onClick={removeHandler}>Delete</Link>
+        <Link to={'/cart'} className="btn btn-primary w-full" onClick={clearHandler}>Clear Cart</Link>
     </Fragment>
   )
 }
