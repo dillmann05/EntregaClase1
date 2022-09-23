@@ -26,9 +26,9 @@ export const CartContextProvider = ( {children} ) => {
     };
 
     const removeManga = (manga) =>{
-       const newOrder = mangas.filter((saved) => saved.id !== manga.id);
+       const filterOrder = mangas.filter((saved) => saved.id !== manga.id);
        
-       return setMangas(newOrder);
+       return setMangas(filterOrder);
     };
 
     const clear = () => {setMangas([])};

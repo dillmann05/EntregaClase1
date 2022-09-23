@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react"
 import { AiOutlineLine } from "react-icons/ai"
 import { IoAddOutline } from "react-icons/io5"
+import { Link } from "react-router-dom";
 import { useCartContext } from "../context/CartContext";
 
 const ItemCount = ({stock, initial, item}) => {
@@ -33,7 +34,7 @@ const ItemCount = ({stock, initial, item}) => {
               <IoAddOutline className="text-2xl"/>
           </button>
         </div>
-        <button className="btn btn-primary w-full" onClick={addHandler}>Buy Now</button>
+        <Link to={'/cart'} className="btn btn-primary w-full" onClick={addHandler}>Buy Now</Link>
     </Fragment>
   )
 }
