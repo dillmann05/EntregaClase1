@@ -1,8 +1,9 @@
 import { Fragment, useState } from "react"
 import { AiOutlineLine } from "react-icons/ai"
 import { IoAddOutline } from "react-icons/io5"
+import { useCartContext } from "../context/CartContext";
 
-const ItemCount = ({stock, initial}) => {
+const ItemCount = ({stock, initial, item}) => {
   const [count, setCount] = useState(initial);
 
   const onSubtract = () => {
@@ -17,6 +18,10 @@ const ItemCount = ({stock, initial}) => {
     }
   };
 
+  const { addManga } = useCartContext();
+
+  const addHandler = ()=>{addManga(item, count)};
+
   return (
     <Fragment>
         <div className="card-actions flex gap-5 items-center">
@@ -28,7 +33,7 @@ const ItemCount = ({stock, initial}) => {
               <IoAddOutline className="text-2xl"/>
           </button>
         </div>
-        <button className="btn btn-primary w-full">Buy Now</button>
+        <button className="btn btn-primary w-full" onClick={addHandler}>Buy Now</button>
     </Fragment>
   )
 }

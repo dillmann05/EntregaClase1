@@ -9,17 +9,20 @@ export const CartContextProvider = ( {children} ) => {
     const [mangas, setMangas] = useState([]);
 
     const isInCart = ( manga ) =>{
-        mangas.some(( saved )=> saved.id === manga.id );
+        return mangas.some(( saved )=> saved.id === manga.id );
     };
 
     const addManga = ( manga, quantity ) =>{
+        
         if (isInCart(manga)) {
-            console.log("El manga ya se encuentra en el carrito");
+            return console.log("El manga ya se encuentra en el carrito");
         }
 
         const order = {...manga, quantity};
 
         setMangas((prev) => prev.concat(order));
+
+        console.log(mangas);
     };
 
     const removeManga = (manga) =>{
@@ -31,6 +34,6 @@ export const CartContextProvider = ( {children} ) => {
     const clear = () => {setMangas([])};
 
     return(
-        <CartContext.Provider value={{isInCart, addManga, removeManga, clear}}>{children}</CartContext.Provider>
+        <CartContext.Provider value={{addManga, removeManga, clear}}>{children}</CartContext.Provider>
      );
 };

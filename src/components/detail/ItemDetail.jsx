@@ -11,7 +11,7 @@ const ItemDetail = ({item}) => {
               <h2 className="card-title">{item.title}</h2>
               <p>ARS $ {item.price}</p>
               <div className="card-actions flex flex-col gap-4">
-                <ItemCount stock={item.stock} initial={1}/>
+                <ItemCount stock={item.stock} initial={1} item={item}/>
               </div>
           </div>
       </div>
