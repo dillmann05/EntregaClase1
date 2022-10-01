@@ -8,9 +8,11 @@ const ItemDetail = ({item}) => {
   
   const { addManga } = useCartContext();
 
+  
   const myOnAdd = (quantityToAdd) =>{
     setQuantity(quantityToAdd);
-    addManga(item, quantityToAdd);
+    const total = quantityToAdd * item.price;
+    addManga(item, quantityToAdd, total);
   };
   
   return (
@@ -26,7 +28,7 @@ const ItemDetail = ({item}) => {
                 {
                 quantity === 0 
                 ?
-                <ItemCount stock={item.stock} initial={1} item={item} myOnAdd={myOnAdd}/>
+                <ItemCount stock={item.stock} initial={1} myOnAdd={myOnAdd}/>
                 :
                 <div> Item agregado.</div>
               }
