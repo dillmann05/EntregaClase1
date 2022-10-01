@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import CartWidget from "./CartWidget"
+import CartWidget2 from "./CartWidget2"
 
 const NavBar = () => {
   return (
@@ -46,7 +47,7 @@ const NavBar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <Link to={"/"}className="btn">Registrate</Link>
+          <CartWidget2/>
         </div>
       </nav>
     </header>

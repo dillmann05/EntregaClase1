@@ -21,8 +21,6 @@ export const CartContextProvider = ( {children} ) => {
         const order = {...manga, quantity};
 
         setMangas((prev) => prev.concat(order));
-
-        console.log(mangas);
     };
 
     const removeManga = (manga) =>{
