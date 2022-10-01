@@ -1,7 +1,7 @@
 import ItemDetail from "./ItemDetail";
-import mangasJson from "../../mangasJson.json";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
 
@@ -9,20 +9,15 @@ const ItemDetailContainer = () => {
 
     const { id } = useParams();
 
-    const getItem = (data,time)=> new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-            if(data){
-                resolve(data);
-            }else{
-                reject("Error");
-            }
-        }, time);
-    });
-  
     useEffect(()=>{
-        getItem(mangasJson.find(p=>p.id === id), 2000)
-        .then((res)=>{console.log(res); setManga(res);})
-        .catch((err)=>console.log(`${err}: No se encontraron los datos`));
+        const db = getFirestore();
+
+        const mangaRef = doc(db, "mangas", id);
+        getDoc(mangaRef).then((res)=>{
+            if(res.exists()){
+                setManga({id: res.id, ...res.data()});
+            }
+        })
     },[id]);
 
   return (

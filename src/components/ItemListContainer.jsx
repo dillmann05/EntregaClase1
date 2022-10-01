@@ -1,31 +1,29 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import mangasJson from "../mangasJson.json";
 import ItemList from "./ItemList";
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 
 const ItemListContainer = ( {greeting} ) => {
   const [mangas, setMangas] = useState([]);
 
   const { title } = useParams();
 
-  const getMangas = (data,time)=> new Promise((resolve,reject)=>{
-    setTimeout(()=>{
-      if(data){
-        resolve(data);
-      }else{
-        reject("Error");
-      }
-    }, time);
-  });
-  
   useEffect(()=>{
-    const arrFilter = (arr)=>{
-      return title === undefined ? arr.filter(p=>p.fav === "true")  : arr.filter(p=>p.title === title);
-    };
-    
-    getMangas(arrFilter(mangasJson), 2000)
-      .then((res)=>{console.log(res); setMangas(res);})
-      .catch((err)=>console.log(`${err}: No se encontraron los datos`));
+    const db = getFirestore();
+
+    const mangasCollection = 
+      title === undefined
+      ?
+      query(collection(db, "mangas"), where("fav", "==", "true"))
+      :
+      query(collection(db, "mangas"), where("title", "==", title));
+
+    getDocs(mangasCollection).then((res)=>{
+        if( res.size === 0 ){
+          console.log("Error: No se encontraron los datos");
+        }
+        setMangas(res.docs.map((doc)=> ({ id: doc.id, ...doc.data() })));
+    });
   },[title]);
 
   return (
