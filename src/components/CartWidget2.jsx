@@ -5,11 +5,11 @@ import { useCartContext } from "../context/CartContext"
 
 
 const CartWidget2 = () => {
-  const { mangas } = useCartContext();
+  const { itemsQuantity } = useCartContext();
 
   return (
     <Fragment>
-        <Link to={"/cart"} className="btn btn-ghost normal-case text-xl">{mangas.length > 0 && (<p>{mangas.length}</p>)} <ImCart/></Link>
+        <Link to={"/cart"} className="btn btn-ghost normal-case text-xl">{itemsQuantity() > 0 && (<p>{itemsQuantity()}</p>)} <ImCart/></Link>
     </Fragment>
   )
 }

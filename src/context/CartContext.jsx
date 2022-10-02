@@ -31,7 +31,23 @@ export const CartContextProvider = ( {children} ) => {
 
     const clear = () => {setMangas([])};
 
+    const itemsQuantity = () =>{
+        const itemsQuantity = mangas.reduce(
+            (acum, manga) => (manga.quantity > 0 ? acum + manga.quantity : acum),
+            0
+        );
+        return itemsQuantity;
+    }
+
+    const orderTotal = () =>{
+        const orderTotal = mangas.reduce(
+            (acum, manga) => (manga.total > 0 ? acum + manga.total : acum),
+            0
+        );
+        return orderTotal;
+    }
+
     return(
-        <CartContext.Provider value={{addManga, removeManga, clear, mangas}}>{children}</CartContext.Provider>
+        <CartContext.Provider value={{addManga, removeManga, clear, itemsQuantity, orderTotal, mangas}}>{children}</CartContext.Provider>
      );
 };
